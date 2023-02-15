@@ -32,9 +32,11 @@ const caroselloElement = document.querySelector('.carosello')
 img.forEach((el)=>{
     let divString = `<div class="slide active position-relative">
                     	<img src="./img/${el.url}" alt="">
-						<div class="position-absolute bottom-0 end-0">
-							<span class="text-white">
-								${el.titolo}<br>
+						<div class="position-absolute bottom-0 text-white p-4 info">
+							<h2>
+								${el.titolo}
+							</h2>
+							<span>
 								${el.descrizione}
 							</span>
 						</div>

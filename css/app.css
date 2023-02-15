@@ -17,6 +17,10 @@
 	position: relative;
 }
 
+.info{
+	background-color: rgba(0, 0, 0,0.5);
+}
+
 .carosello .carosello__arrow {
 	position: absolute;
 	font-size: 40px;
