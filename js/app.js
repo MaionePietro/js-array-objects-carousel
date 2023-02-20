@@ -1,7 +1,7 @@
 
 const img =[
 	{
-		ulr :'01.webp',
+		url :'01.webp',
 		titolo :'Spider-Man: Miles Morales',
 		descrizione: 'Videogioco d avventura dinamica sviluppato da Insomniac Games e distribuito da Sony Interactive Entertainment in esclusiva per PlayStation 4 e PlayStation 5.'
 	},
@@ -30,9 +30,9 @@ const caroselloElement = document.querySelector('.carosello')
 
 
 img.forEach((el)=>{
-    let divString = `<div class="slide active position-relative">
+    let divString = `<div class="slide position-relative">
                     	<img src="./img/${el.url}" alt="">
-						<div class="position-absolute bottom-0 text-white p-4 info">
+						<div class="position-absolute bottom-0  text-white p-4 info">
 							<h2>
 								${el.titolo}
 							</h2>
@@ -42,19 +42,19 @@ img.forEach((el)=>{
 						</div>
                 	</div>`
 	caroselloElement.innerHTML += divString;
-	console.log(el.url)
 })
-
 
 let indiceSlideAttiva = 0
 const slideElements = document.getElementsByClassName('slide')
+slideElements[0].classList.add('active')
 
 const rightBtnElement = document.querySelector('.carosello__arrow.arrow-right')
 const leftBtnElement = document.querySelector('.carosello__arrow.arrow-left')
 
-console.log(rightBtnElement)
-
 rightBtnElement.addEventListener('click', function () {
+	const slideElements = document.getElementsByClassName('slide')
+	slideElements[indiceSlideAttiva].classList.add('active')
+
 	console.log('current slide', indiceSlideAttiva)
     
 	let slideCorrente = slideElements[indiceSlideAttiva]
@@ -69,6 +69,9 @@ rightBtnElement.addEventListener('click', function () {
 })
 
 leftBtnElement.addEventListener('click', function () {
+	const slideElements = document.getElementsByClassName('slide')
+	slideElements[indiceSlideAttiva].classList.add('active')
+
 	console.log('current slide', indiceSlideAttiva)
 
     let slideCorrente = slideElements[indiceSlideAttiva]
