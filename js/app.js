@@ -56,11 +56,17 @@ rightBtnElement.addEventListener('click', function () {
 	slideElements[indiceSlideAttiva].classList.add('active')
 
 	console.log('current slide', indiceSlideAttiva)
+	const lastIndex = slideElements.length - 1
     
 	let slideCorrente = slideElements[indiceSlideAttiva]
 	slideCorrente.classList.remove('active')
 
-	indiceSlideAttiva += 1  
+	if (indiceSlideAttiva < lastIndex) {
+		indiceSlideAttiva += 1
+	} else {
+		indiceSlideAttiva = 0
+	}
+	//indiceSlideAttiva += 1  
 
 	let prossimaSlide = slideElements[indiceSlideAttiva]
 	prossimaSlide.classList.add('active')
@@ -77,7 +83,12 @@ leftBtnElement.addEventListener('click', function () {
     let slideCorrente = slideElements[indiceSlideAttiva]
 	slideCorrente.classList.remove('active')
 
-	indiceSlideAttiva -= 1
+	if (indiceSlideAttiva > 0) {
+		indiceSlideAttiva--
+	} else {
+		indiceSlideAttiva = slideElements.length - 1 //last index
+	}
+	//indiceSlideAttiva -= 1
 
 	let prossimaSlide = slideElements[indiceSlideAttiva]
 	prossimaSlide.classList.add('active')
